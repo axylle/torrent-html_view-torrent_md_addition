@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta charset="utf-8">
+	<title>MD Addition Request</title>
+	<!-- javascript -->
+	
+</head>
+
+<body>
+	<div class="container">
+		<!-- title -->
+		<div class="header1">
+			<h3 style="margin-bottom:0px; margin-top:2px">MD Addition Request</h3>
+			<p class="small" id="version">Version 1.1.1</p>
+			<hr style="margin-top:0px; margin-bottom:5px">
+		</div>
+
+		<!-- side bar -->
+		<div id="obj_div" class="FloatDiv">
+			<div class="Inner"> 
+				<div class="wrapper" >
+					<div class="table" id="inserthere"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="overlay"></div>
+
+		<div id="pop1" class="popbox">
+			<h2><center><label id="lbl_mdid">Existing Doctor Records</label></center></h2>
+			<div class='wrapper'>
+				<div class='table' id="div_table">
+				</div>
+			</div>
+			<button class="btn btn-danger" id="btn_CloseDiv" type="button">Close</button>
+		</div>
+
+		<!-- main form -->
+		<form method="post" id="form">
+			<div class="body">
+				<div id="alert"></div>
+				<div id="info_tr" style="display:none;" class="alert alert-info fade in">
+					<a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+					<p id="info"> &nbsp;</p>
+				</div>
+
+				<div id="info_tr2" style="display:none;" class="alert alert-info fade in">
+					<a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+					<p id="info2"> &nbsp;</p>
+				</div>
+				<table id="tbl" width="100%">
+					<tbody>
+						<tr>
+							<td colspan=3>
+								<label for="prc" class='control-label'>PRC Number:</label>
+								<input type="text" class="form-control" id="prc" name="prc" placeholder="Enter PRC Number">
+							</td>
+							<td colspan=3 class="required">
+								<label for="last_name" class='control-label'>Last Name:</label>
+								<input type="text" class="form-control" id="last_name" name="last_name" placeholder="Enter Last Name" required>
+							</td>
+							<td colspan=3 class="required">
+								<label for="first_name" class='control-label'>First Name:</label>
+								<input type="text" class="form-control" id="first_name" name="first_name" placeholder="Enter First Name" required>
+							</td>
+							<td colspan=3>
+								<label for="middle_name" class='control-label'>Middle Name:</label>
+								<input type="text" class="form-control" id="middle_name" name="middle_name" placeholder="Enter Middle Name">
+							</td>
+						</tr>
+
+						<tr>
+							<td colspan=4>
+								<label for="birth_date" class='control-label'>Birth Date:</label>
+								<input type="date" class="form-control" id="birth_date" name="birth_date" value="1984-01-10" style="height:34px; width:100%">
+							</td>
+							<td colspan=4>
+								<label for="birthplace" class='control-label'>Birth Place:</label>
+								<input type="text" class="form-control" id="birthplace" name="birthplace" placeholder="Enter Birth Place">
+							</td>
+							<td colspan=4 class="required">
+								<label for="specialty_code" class='control-label'>Specialty:</label>
+								<select class="form-control"  id="specialty_code" name="specialty_code" required>
+									<option value="CD">Cardiology</option>
+									<option value="CDE">Child Development</option>
+									<option value="DB">Diabetology</option>
+									<option value="DRG">Drugstore</option>
+									<option value="END">Endocrinology</option>
+									<option value="ENT">ENT</option>
+									<option value="EP">Epileptology</option>
+									<option value="FM">Family Medicine</option>
+									<option value="GI">Gastroenterology</option>
+									<option value="GP">General Practice</option>
+									<option value="GR">Geriatrics</option>
+									<option value="GRP">GERIA-PSYCH</option>
+									<option value="IM" selected="selected">Internal Medicine</option>
+									<option value="NB">Neuro Behaviour</option>
+									<option value="NEP">Nephrology</option>
+									<option value="NP">NEURO/PSYCH</option>
+									<option value="NS">Neurologic Surgery</option>
+									<option value="NU">Neurology</option>
+									<option value="OB">OB Gyne</option>
+									<option value="ON">Oncology</option>
+									<option value="OS">Other Specialty</option>
+									<option value="PHR">Pharmacist</option>
+									<option value="PN">Pedia Neurologist</option>
+									<option value="PS">Psychiatry</option>
+									<option value="PUL">Pulmonology</option>
+									<option value="RH">Rheumatology</option>
+									<option value="RM">Rehab Medicine</option>
+									<option value="UNK">Unknown</option>
+									<option value="UR">Urology</option>
+								</select>
+							</td>
+						</tr>
+
+						<tr>
+							<td colspan=2>
+								<label for="sex" class='control-label'>Gender:</label>
+								<select class="form-control"  id="sex" name="sex">
+									<option value="" selected>---</option>
+									<option value="Female">Female</option>
+									<option value="Male">Male</option>
+								</select>
+							</td>
+							<td colspan=6>
+								<label for="e_mail" class='control-label'>E-Mail Address:</label>
+								<input type="text" class="form-control" id="e_mail" name="e_mail" placeholder="Enter E-mail Address">
+							</td>
+							<td colspan=4>
+								<label for="mobile_number" class='control-label'>Mobile Phone No.:</label>
+								<input type="text" class="form-control" id="mobile_number" name="mobile_number" placeholder="Enter Mobile Phone No.">
+							</td>
+						</tr>
+
+						<tr>
+							<td colspan=12 class="required">
+								<label for="clinic_address" class='control-label'>Hospital Name:</label>
+								<input type="text" class="form-control" id="clinic_address" name="clinic_address" placeholder="Enter Hospital Name" required>
+							</td>
+						</tr>
+						<tr>
+							<td colspan=4>
+								<label for="address_stnumber" class='control-label'>Street No./ Bldg. Name:</label>
+								<input type="text" class="form-control" id="address_stnumber" name="address_stnumber" placeholder="Enter Street No./ Bldg. Name">
+							</td>
+							<td colspan=4>
+								<label for="address_street" class='control-label'>Street Name:</label>
+								<input type="text" class="form-control" id="address_street" name="address_street" placeholder="Enter Street Name">
+							</td>
+							<td colspan=4>
+								<label for="address_barangay" class='control-label'>Baranggay:</label>
+								<input type="text" class="form-control" id="address_barangay" name="address_barangay" placeholder="Enter Baranggay">
+							</td>
+						</tr>
+						<tr>
+							<td colspan=4>
+								<label for="address_city" class='control-label'>City/ Municipality/ Town:</label>
+								<input type="text" class="form-control" id="address_city" name="address_city" placeholder="Enter City/ Municipality/ Town">
+							</td>
+							<td colspan=4>
+								<label for="address_province" class='control-label'>Province:</label>
+								<input type="text" class="form-control" id="address_province" name="address_province" placeholder="Enter Province">
+							</td>
+							<td colspan=4>
+								<label for="clinic_hours" class='control-label'>Clinic Hours:</label>
+								<input type="text" class="form-control" id="clinic_hours" name="clinic_hours" placeholder="Enter Clinic Hours">
+							</td>
+						</tr>
+						<tr>
+							<td colspan=3 class="required"><label for="class_code" class='control-label'>Class Code:</label>
+								<select class="form-control"  id="class_code" name="class_code" required>
+									<option value="CR">CORE</option>
+									<option value="NC">NON-CORE</option>
+									<option value="UNK">UNKNOWN</option>
+								</select>
+							</td>
+							<td colspan=3>
+								<label for="average_patient_per_day" class='control-label'>Ave. Patients Per Day:</label>
+								<input type="text" class="form-control" id="average_patient_per_day" name="average_patient_per_day" placeholder="Enter Ave. Patients Per Day">
+							</td>
+							<td colspan=3>
+								<label for="position" class='control-label'>Postion:</label>
+								<select class="form-control"  id="position" name="position" required>
+									<option value="MD">Doctor</option>
+								</select>
+							</td>
+							<td colspan=3 class="required">
+								<label for="frequency" class='control-label'>Frequency:</label>
+								<select class="form-control"  id="frequency" name="frequency" required>
+									<option value="0">0</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td colspan=2 class="required">
+								<label for="visit_day1" class='control-label'>Wk1 Day:</label>
+								<select class="form-control"  id="visit_day1" name="visit_day1" required>
+									<option value="0">0</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+								</select>
+							</td>
+							<td colspan=2 class="required">
+								<label for="visit_day2" class='control-label'>Wk2 Day:</label>
+								<select class="form-control"  id="visit_day2" name="visit_day2" required>
+									<option value="0">0</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+								</select>
+							</td>
+							<td colspan=2 class="required">
+								<label for="visit_day3" class='control-label'>Wk3 Day:</label>
+								<select class="form-control"  id="visit_day3" name="visit_day3" required>
+									<option value="0">0</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+								</select>
+							</td>
+							<td colspan=2 class="required">
+								<label for="visit_day4" class='control-label'>Wk4 Day:</label>
+								<select class="form-control"  id="visit_day4" name="visit_day4" required>
+									<option value="0">0</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+								</select>
+							</td>
+							<td colspan=2 class="required">
+								<label for="visit_day5" class='control-label'>Wk5 Day:</label>
+								<select class="form-control"  id="visit_day5" name="visit_day5" required>
+									<option value="0">0</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+								</select>
+							</td>
+						</tr>
+						<tr><td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td></tr>
+						<tr><td colspan=12><hr sty></td></tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="footer">
+				<table width="100%">
+					<tbody>
+						<tr><td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td></tr>
+						<tr>
+							<td colspan=2>
+								<button class="btn btn-default form-control" id="reset" type="reset">Reset</button>
+							</td>
+							<td colspan=5>
+								<button class="btn btn-primary form-control" id="submit" type="submit">Create Request for Doctor Addition</button>
+							</td>
+							<td colspan=3>
+							</td>
+							<td colspan=3>
+								<button class="btn btn-info form-control" id="modalAlert" type="button" data-toggle="modal" data-target="#myModal">Search</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</form>
+		<!-- modal dialog -->
+		<div id="myModal" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Search Doctor</h4>
+					</div>
+					<div class="modal-body" style="height:190px;">
+						<table width=100%>
+							<tr>
+								<td class="required" colspan=3>
+									<label for="search_lastname" class='control-label'>Lastname:</label>
+								</td>
+								<td colspan=9>
+									<input type="text" class="form-control" id="search_lastname" name="lastname">
+								</td>
+							</tr>
+							<tr>
+								<td class="required" colspan=3>
+									<label for="search_firstname" class='control-label'>First Name:</label>
+								</td>
+								<td colspan=9>
+									<input type="text" class="form-control" id="search_firstname" name="firstname">
+								</td>
+							</tr>
+							<tr>
+								<td colspan=3>
+									<label for="search_middlename" class='control-label'>Middle Name:</label>
+								</td>
+								<td colspan=9>
+									<input type="text" class="form-control" id="search_middlename" name="middlename">
+								</td>
+							</tr>
+							<tr>
+								<td colspan=3>
+									<label for="search_prc" class='control-label'>PRC Number:</label>
+								</td>
+								<td colspan=9>
+									<input type="text" class="form-control" id="search_prc" name="prc">
+								</td>
+							</tr>
+							<tr style="display:none"><td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td></tr>
+						</table>
+					</div>
+					<div class="modal-footer">
+						<button type="button" id="search_local" class="btn btn-primary">Search Local DB</button>
+						<button type="button" id="search_online"class="btn btn-info">Search Online</button>
+						<button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- custom alert -->
+		<div id="modalDialog" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">System Message</h4>
+					</div>
+					<div class="modal-body" style="height:130px;" >
+						<p id="modalMessage">Hello Me</p>
+					</div>
+					<div class="modal-footer">
+						<button type="submit" id="save_ok" class="btn btn-info">Okay</button>
+						<button type="submit" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	
+	
+</body>
+</html>
+
+<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript" src="bootstrap.min.js"></script>
+	<script type="text/javascript" src="rr_eform.js"></script>
+	<script type="text/javascript" src="index.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+
+	<!-- css -->
+	<link rel="stylesheet" href="bootstrap.min.css">
+	<link rel="stylesheet" href="app.css">
